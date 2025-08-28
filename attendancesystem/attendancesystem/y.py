@@ -3,8 +3,8 @@ import os
 
 def newstudent(nameID):
     # Define the paths to the model files
-    prototxt_path = r"C:\Users\Pranshu Saini\Downloads\deploy.prototxt"
-    model_path = r"C:\Users\Pranshu Saini\Downloads\res10_300x300_ssd_iter_140000.caffemodel"
+    prototxt_path = r"deploy.prototxt"
+    model_path = r"res10_300x300_ssd_iter_140000.caffemodel"
 
     # Check if the files exist
     if not os.path.exists(prototxt_path) or not os.path.exists(model_path):

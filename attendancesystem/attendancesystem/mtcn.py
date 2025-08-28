@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 
 # Load the trained model
-model = load_model(r"C:\Users\Pranshu Saini\Desktop\attendancesystem\face_recognition_model.h5")
+model = load_model(r"face_recognition_model.h5")
 
 # Parameters
 IMG_SIZE = (128, 128)  # Must match the training image size
@@ -18,7 +18,7 @@ class_names = {index: name for index, name in enumerate(sorted(os.listdir(images
 mtcnn_detector = MTCNN()
 
 # Attendance file path
-excel_file = r"C:\Users\Pranshu Saini\Desktop\attendancesystem\attendance.xlsx"
+excel_file = r"attendance.xlsx"
 
 # Create an attendance file if it doesn't exist
 if not os.path.exists(excel_file):

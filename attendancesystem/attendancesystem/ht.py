@@ -5,16 +5,16 @@ from openpyxl import Workbook, load_workbook
 import os
 from datetime import datetime
 
-model = load_model(r"C:\Users\Pranshu Saini\Desktop\attendancesystem\face_recognition_model.h5")
+model = load_model(r"face_recognition_model.h5")
 IMG_SIZE = (128, 128)  # Must match the training image size
 images_path = r"C:\Users\Pranshu Saini\Desktop\images"
 class_names = {index: name for index, name in enumerate(sorted(os.listdir(images_path)))}
 
-model_file = r"C:\Users\Pranshu Saini\Downloads\res10_300x300_ssd_iter_140000.caffemodel"
-config_file = r"C:\Users\Pranshu Saini\Downloads\deploy.prototxt"
+model_file = r"res10_300x300_ssd_iter_140000.caffemodel"
+config_file = r"deploy.prototxt"
 dnn_net = cv2.dnn.readNetFromCaffe(config_file, model_file)
 
-excel_file = r"C:\Users\Pranshu Saini\Desktop\attendancesystem\attendance.xlsx"
+excel_file = r"attendance.xlsx"
 if not os.path.exists(excel_file):
     wb = Workbook()
     ws = wb.active
